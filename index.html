@@ -3,9 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Alex Morgan | Profile Card</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <article class="profile-card" data-testid="test-profile-card">
+        <div class="card-inner">
+            
+            <aside class="left-pillar">
+                <figure class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="https://i.pravatar.cc/300?img=12" alt="Alex Morgan Portrait" class="headshot-image" data-testid="test-user-avatar">
+                        <div class="headshot-border"></div>
+                    </div>
+                    <div class="badge-background" aria-hidden="true">
+                        <svg class="badge-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 5.26L19.47 6.11L20.47 10.5L23 13.5L20.47 16.5L19.47 20.89L15.09 21.74L12 25L8.91 21.74L4.53 20.89L3.53 16.5L1 13.5L3.53 10.5L4.53 6.11L8.91 5.26L12 2Z" fill="#00478d"/>
+                            <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </figure>
+
+                <div class="verification-info">
+                    <span class="verification-label">Identity Verification</span>
+                    <div class="verification-number">
+                        <p id="current-time" data-testid="test-user-time" aria-live="polite">0000000000000</p>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="right-pillar">
+                <header class="header-section">
+                    <div class="name-title">
+                        <h1 class="name" data-testid="test-user-name">Alex Morgan</h1>
+                        <p class="title">UX Designer & Frontend Craftsman</p>
+                    </div>
+                    <nav class="social-nav" data-testid="test-user-social-links">
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" data-testid="test-user-social-twitter" aria-label="Follow Alex on X/Twitter">𝕏</a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" data-testid="test-user-social-linkedin" aria-label="Connect on LinkedIn">in</a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" data-testid="test-user-social-github" aria-label="View GitHub Portfolio">gh</a>
+                    </nav>
+                </header>
+
+                <p class="bio" data-testid="test-user-bio">
+                    A passionate designer and developer focused on creating accessible and beautiful web experiences. 
+                    I believe that the intersection of clean code and thoughtful aesthetics is where true digital magic happens.
+                </p>
+
+                <div class="bento-grid">
+                    <section class="list-container" data-testid="test-user-hobbies">
+                        <div class="section-header">
+                            <span class="icon-background hobbies-bg">★</span>
+                            <h2 class="section-heading">Hobbies</h2>
+                        </div>
+                        <ul class="list">
+                            <li class="list-item"><span>📷</span> Photography</li>
+                            <li class="list-item"><span>🏔️</span> Hiking</li>
+                            <li class="list-item"><span>♟️</span> Chess</li>
+                        </ul>
+                    </section>
+
+                    <section class="list-container" data-testid="test-user-dislikes">
+                        <div class="section-header">
+                            <span class="icon-background dislikes-bg">☹</span>
+                            <h2 class="section-heading">Dislikes</h2>
+                        </div>
+                        <ul class="list">
+                            <li class="list-item"><span>📶</span> Slow internet</li>
+                            <li class="list-item"><span>🌿</span> Coriander</li>
+                            <li class="list-item"><span>📊</span> Unstructured data</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <footer class="expertise-section">
+                    <span class="expertise-label">Core Expertise:</span>
+                    <div class="expertise-tags">
+                        <span class="tag">User Interface Design</span>
+                        <span class="tag">React Ecosystem</span>
+                        <span class="tag">Editorial Systems</span>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </article>
+
+    <script>
+
+        function updateTime() {
+            const timeElement = document.getElementById('current-time');
+            timeElement.textContent = Date.now();
+        }
+        setInterval(updateTime, 100);
+        updateTime();
+    </script>
 </body>
 </html>
